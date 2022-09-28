@@ -5,7 +5,8 @@ import 'package:flutter_jobfinder_ui/screens/homeScreen.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent
+      statusBarColor: Color(0xFFF5F5F5),
+      statusBarIconBrightness: Brightness.dark,
     )
   );
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryColor: Colors.grey[100],
         primarySwatch: Colors.grey,
       ),
       home: HomeScreen(),

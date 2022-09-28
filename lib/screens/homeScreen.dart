@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_jobfinder_ui/appData.dart';
+import 'package:flutter_jobfinder_ui/constants.dart';
+import 'package:flutter_jobfinder_ui/widgets/bottomNavItem.dart';
+import 'package:flutter_jobfinder_ui/widgets/customListWrapper.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               height: size.height * 0.30,
               decoration: BoxDecoration(
-                color: Colors.grey[100],
+                color: tColor,
               ),
               child: Stack(
                 children: <Widget>[
@@ -136,10 +140,74 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            ListView(
-
+            Expanded(
+              child: ListView(
+                physics: const BouncingScrollPhysics(),
+                children: <Widget>[
+                  CustomListWrapper(items: jobTitle, title: 'Job Title'),
+                  CustomListWrapper(items: country, title: 'Country'),
+                ],
+              ),
+            ),
+            Container(
+              height: 70.0,
+              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Container(
+                alignment: Alignment.center,
+                height: 50.0,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Text(
+                  'Submit',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
           ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          height: 60.0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              BottomNavItem(
+                icon: Icons.home,
+                title: 'Home',
+                isActive: true,
+                onTap: () {},
+              ),
+              BottomNavItem(
+                icon: Icons.calendar_month_outlined,
+                title: 'Meetings',
+                isActive: false,
+                onTap: () {},
+              ),
+              BottomNavItem(
+                icon: Icons.favorite_border_outlined,
+                title: 'Favorite',
+                isActive: false,
+                onTap: () {},
+              ),
+              BottomNavItem(
+                icon: Icons.settings_outlined,
+                title: 'settings',
+                isActive: false,
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );
