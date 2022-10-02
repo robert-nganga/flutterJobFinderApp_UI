@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_jobfinder_ui/screens/homeScreen.dart';
+import 'package:flutter_jobfinder_ui/screens/startScreen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Color(0xFFF5F5F5),
+      statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
     )
   );
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.grey[100],
         primarySwatch: Colors.grey,
       ),
-      home: HomeScreen(),
+      home: StartScreen(),
     );
   }
 }
