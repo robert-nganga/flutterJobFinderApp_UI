@@ -1,3 +1,3 @@
 # flutter_jobfinder_ui
 
-A Flutter Job finder app UI.
+Job finder app UI from a design I found on dribble.
